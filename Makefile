@@ -6,7 +6,7 @@
 #    By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 17:30:25 by zgtaib            #+#    #+#              #
-#    Updated: 2023/11/09 19:17:18 by zgtaib           ###   ########.fr        #
+#    Updated: 2023/11/11 14:54:48 by zgtaib           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f *.o $(OBJ)
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)

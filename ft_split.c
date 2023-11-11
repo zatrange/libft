@@ -6,13 +6,13 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 16:07:47 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/10 17:19:12 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/11 19:09:38 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libc.h"
 
-int isword(char *str, char c)
+/*int isword(char *str, char c)
 {
     int x;
     int count ;
@@ -32,9 +32,9 @@ int isword(char *str, char c)
 }
 
 
-char    **ft_split(char const *s, char c);
+char    **ft_split(char const *s, char c)
 {
-    char ** string;
+    char **string;
     
     
-}
+}*/
