@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 20:21:19 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/11 19:09:13 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/12 16:06:54 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ char    *ft_substr(char const *s, unsigned int start, size_t n)
 /*int main()
 {
     char str[] = "o bay bay salam?";
-    printf("%s", ft_substr(str, 4, 12));
+    printf("%s\n", ft_substr(str, 0, 0));
 }*/
+
 
