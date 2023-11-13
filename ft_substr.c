@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 20:21:19 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/12 16:06:54 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/13 13:45:49 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,14 @@ char    *ft_substr(char const *s, unsigned int start, size_t n)
     char * str;
 
     x = 0; 
+    if (n > ft_strlen(s + start))
+        n = ft_strlen(s + start);
     str = (char *)malloc((n + 1) * sizeof(char));
     if (!str)
         return (0);
-    if (start > ft_strlen(s) || n == 0)
+    if (start >= ft_strlen(s) || n == 0)
     {
-        str[0] = 0;
+        str[0] = '\0';
         return (str);
     }
     while (s[start] != '\0' && x < n)
@@ -36,10 +38,9 @@ char    *ft_substr(char const *s, unsigned int start, size_t n)
     str[x] = '\0';
     return (str);
 }
-/*int main()
+int main()
 {
-    char str[] = "o bay bay salam?";
-    printf("%s\n", ft_substr(str, 0, 0));
-}*/
-
+    char str[] = "";
+    printf("%s\n", ft_substr(str, 1, 1));
+}
 
