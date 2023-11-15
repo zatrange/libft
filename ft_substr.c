@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 20:21:19 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/14 11:31:53 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/15 17:09:45 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t n)
 	char	*str;
 
 	x = 0;
-	if (start >= ft_strlen(s) || n == 0 || !s)
+	if (!s)
+		return (0);
+	if (start >= ft_strlen(s) || n == 0)
 	{
-		str = malloc(sizeof(char));
-		if (!str)
-			return (0);
-		str[0] = '\0';
+		str = ft_calloc(1, sizeof(char));
 		return (str);
 	}
 	if (n > ft_strlen(s + start))

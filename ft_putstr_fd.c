@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:45:58 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/08 15:45:59 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/15 17:05:11 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,11 @@ void	ft_putstr_fd(char *s, int fd)
 	int	x;
 
 	x = 0;
-	if (fd > 0)
+	if (!s || fd < 0)
+		return ;
+	while (s[x] != '\0')
 	{
-		while (s[x] != '\0')
-		{
-			write(fd, &s[x], 1);
-			x++;
-		}
+		write(fd, &s[x], 1);
+		x++;
 	}
 }

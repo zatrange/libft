@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 18:30:05 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/09 19:10:49 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/15 15:53:42 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	x;
 
 	x = 0;
+	if (!s || !f)
+		return (0); 
 	str = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!str)
 		return (0);

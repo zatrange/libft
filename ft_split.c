@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 16:07:47 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/14 18:13:19 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/15 19:02:26 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ static int	countingwords(char const *s, char c)
 static char	*fillword(int *x, char const *s, char c)
 {
 	int		t;
-	int		wordsize;
 	char	*str;
 	int		y;
+	int wordsize;
 
 	y = 0;
 	t = *x;
@@ -59,23 +59,26 @@ static char	*fillword(int *x, char const *s, char c)
 	return (str);
 }
 
-static void	freed(char **str, int count)
+static char **freed(char **res)
 {
-	int	x;
-
-	x = 0;
-	while (x < count)
-	{
-		free(str[x]);
-		x++;
-	}
-	free(str);
+    int i;
+	
+	i = 0;
+    if(res)
+    {
+        while(res[i])
+        {
+            free(res[i]);
+            i++;
+        }
+        free(res);
+    }
+    return (0);
 }
 
 char	**ft_split(char const *s, char c)
 {
 	char	**str;
-	int		wordcount;
 	int		y;
 	int		x;
 	int		i;
@@ -83,33 +86,45 @@ char	**ft_split(char const *s, char c)
 	y = 0;
 	i = 0;
 	x = 0;
-	wordcount = countingwords(s, c);
-	str = (char **)malloc((wordcount + 1) * sizeof(char *));
+	if (!s)
+		return (0);
+	str = (char **)malloc((countingwords(s, c) + 1) * sizeof(char *));
 	if (!str)
 		return (0);
-	while (y < wordcount)
+	while (y < countingwords(s, c))
 	{
 		str[y] = fillword(&x, s, c);
 		if (!str[y])
 		{
-			freed(str, wordcount);
+			return (freed(str));
 		}
 		y++;
 	}
-	str[y] = 0;
+	str[countingwords(s, c)] = 0;
 	return (str);
 }
-/*int main()
-{
-    const char *inputString = "";
-    char delimiter = ',';
+// int main()
+// {
+//     const char *inputString = "\t\t\t\t\tteste\t\t\t\t\t\t";
+//     char delimiter = '\t';
 
-    char **result = ft_split(inputString, delimiter);
-    // Print the split words
-    for (int i = 0; result[i] != NULL; i++) {
-        printf("Word %d: %s\n", i + 1, result[i]);
-    }
-}*/
+//     char **result = ft_split(inputString, delimiter);
+//     // Print the split words
+//     for (int i = 0; result[i] != NULL; i++) {
+//         printf("Word %d: %s\n", i + 1, result[i]);
+//     }
+// }
+// /*int main()
+// {
+//     const char *inputString = "";
+//     char delimiter = ',';
+
+//     char **result = ft_split(inputString, delimiter);
+//     // Print the split words
+//     for (int i = 0; result[i] != NULL; i++) {
+//         printf("Word %d: %s\n", i + 1, result[i]);
+//     }
+// }*/
 // int main()
 // {
 //     char str[] = "\0aa\0bbb";

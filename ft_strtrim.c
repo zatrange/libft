@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:49:46 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/14 10:28:15 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/15 16:48:17 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*trimedstr;
 	int		x;
 
+	if (!s1 || !set)
+		return (0);
 	start = 0;
 	x = 0;
 	end = ft_strlen(s1) - 1;
@@ -32,11 +34,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!trimedstr)
 		return (0);
 	while (x < trimedlen)
-	{
-		trimedstr[x] = s1[start];
-		start++;
-		x++;
-	}
+		trimedstr[x++] = s1[start++];
 	trimedstr[x] = '\0';
 	return (trimedstr);
 }

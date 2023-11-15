@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 15:13:47 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/10 18:18:54 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/15 16:54:42 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,27 @@
 
 char	*ft_strjoin(const char *s1, const char *s2)
 {
-	size_t	len1;
-	size_t	len2;
 	char	*join_str;
 	size_t	x;
 
 	x = 0;
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	join_str = (char *) malloc((len1 + len2 + 1) * sizeof(char));
+	if (!s1 || !s2)
+		return (0);
+	join_str = (char *) malloc((ft_strlen(s1) 
+				+ ft_strlen(s2) + 1) * sizeof(char));
 	if (!join_str)
 		return (0);
-	while (s1[x] != '\0' && x < len1)
+	while (s1[x] != '\0' && x < ft_strlen(s1))
 	{
 		join_str[x] = s1[x];
 		x++;
 	}
 	x = 0;
-	while (s2[x] != '\0' && x < len2)
+	while (s2[x] != '\0' && x < ft_strlen(s2))
 	{
-		join_str[len1 + x] = s2[x];
+		join_str[ft_strlen(s1) + x] = s2[x];
 		x++;
 	}
-	join_str[x + len1] = '\0';
+	join_str[x + ft_strlen(s1)] = '\0';
 	return (join_str);
 }
