@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 10:28:31 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/09 20:05:47 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/16 16:00:58 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,12 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+
+typedef struct s_list
+{
+void *content;
+struct s_list *next;
+} t_list;
+
+t_list  *ft_lstnew(void *content);
 #endif

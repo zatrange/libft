@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 16:07:47 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/15 19:02:26 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/16 18:49:03 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static char	*fillword(int *x, char const *s, char c)
 	int		t;
 	char	*str;
 	int		y;
-	int wordsize;
+	int		wordsize;
 
 	y = 0;
 	t = *x;
@@ -59,21 +59,21 @@ static char	*fillword(int *x, char const *s, char c)
 	return (str);
 }
 
-static char **freed(char **res)
+static char	**freed(char **res)
 {
-    int i;
-	
+	int	i;
+
 	i = 0;
-    if(res)
-    {
-        while(res[i])
-        {
-            free(res[i]);
-            i++;
-        }
-        free(res);
-    }
-    return (0);
+	if (res)
+	{
+		while (res[i])
+		{
+			free(res[i]);
+			i++;
+		}
+		free(res);
+	}
+	return (0);
 }
 
 char	**ft_split(char const *s, char c)
@@ -124,7 +124,7 @@ char	**ft_split(char const *s, char c)
 //     for (int i = 0; result[i] != NULL; i++) {
 //         printf("Word %d: %s\n", i + 1, result[i]);
 //     }
-// }*/
+// }
 // int main()
 // {
 //     char str[] = "\0aa\0bbb";
