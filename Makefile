@@ -6,7 +6,7 @@
 #    By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 17:30:25 by zgtaib            #+#    #+#              #
-#    Updated: 2023/11/16 18:34:12 by zgtaib           ###   ########.fr        #
+#    Updated: 2023/11/17 18:31:05 by zgtaib           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ SRC = ft_isalnum.c \
 		ft_strmapi.c \
 		ft_striteri.c
 OBJ  = $(SRC:.c=.o)
-SRCB = ft_lstnew.c	
+SRCB = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c
 OBJB = $(SRCB:.c=.o)
 
 bonus: $(OBJB)
@@ -57,9 +57,6 @@ all: $(NAME)
 
 $(NAME): $(OBJ) $(OBJB)
 	ar rc $@ $^
-
-# $(NAME): $(OBJB)
-# 	ar rc $@ $^
 
 %.o: %.c libft.a
 	$(CC) $(CFLAGS) -c $< -o $@

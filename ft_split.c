@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 16:07:47 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/16 18:49:03 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/17 15:26:06 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,12 @@ static char	*fillword(int *x, char const *s, char c)
 	return (str);
 }
 
-static char	**freed(char **res)
+static void freed(char **res)
 {
 	int	i;
 
 	i = 0;
-	if (res)
+		if (res)
 	{
 		while (res[i])
 		{
@@ -73,7 +73,6 @@ static char	**freed(char **res)
 		}
 		free(res);
 	}
-	return (0);
 }
 
 char	**ft_split(char const *s, char c)
@@ -96,7 +95,8 @@ char	**ft_split(char const *s, char c)
 		str[y] = fillword(&x, s, c);
 		if (!str[y])
 		{
-			return (freed(str));
+			freed(str);
+			return (NULL);
 		}
 		y++;
 	}
@@ -114,10 +114,10 @@ char	**ft_split(char const *s, char c)
 //         printf("Word %d: %s\n", i + 1, result[i]);
 //     }
 // }
-// /*int main()
+// int main()
 // {
-//     const char *inputString = "";
-//     char delimiter = ',';
+//     const char *inputString = "hello";
+//     char delimiter = ' ';
 
 //     char **result = ft_split(inputString, delimiter);
 //     // Print the split words
