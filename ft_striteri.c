@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 20:04:55 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/15 17:05:54 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/18 17:00:49 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	unsigned int	x;
 
 	x = 0;
-	if (!s || !f)
+	if (!s)
 		return ;
 	while (s[x] != '\0')
 	{

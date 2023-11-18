@@ -6,7 +6,7 @@
 #    By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 17:30:25 by zgtaib            #+#    #+#              #
-#    Updated: 2023/11/17 18:31:05 by zgtaib           ###   ########.fr        #
+#    Updated: 2023/11/18 18:34:58 by zgtaib           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,18 +47,18 @@ SRC = ft_isalnum.c \
 		ft_split.c \
 		ft_strmapi.c \
 		ft_striteri.c
-OBJ  = $(SRC:.c=.o)
 SRCB = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c
+OBJ  = $(SRC:.c=.o)
 OBJB = $(SRCB:.c=.o)
 
-bonus: $(OBJB)
-
 all: $(NAME)
-
-$(NAME): $(OBJ) $(OBJB)
+$(NAME): $(OBJ)
 	ar rc $@ $^
 
-%.o: %.c libft.a
+bonus: $(OBJB)
+	ar rc $(NAME) $^
+
+%.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
@@ -68,3 +68,6 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all bonus clean fclean re
+

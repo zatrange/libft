@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 09:24:51 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/17 14:22:21 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/18 17:30:57 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,33 @@
 
 void    ft_lstadd_front(t_list **lst, t_list *new)
 {
-    if (!lst || !new)
-        return ;
+	if(new == NULL)
+		return ;
+	if (*lst == NULL)
+		*lst = new;
+	else{
     new->next = *lst;
-    *lst = new;    
+    *lst = new;
+	}    
 }
 // int main()
 // {
-//     t_list *head;
-//     t_list *current;
-    
+// 	t_list *head;
+// 	head = NULL;
 
-//     t_list *node = ft_lstnew("haha");
-//     t_list *node1 = ft_lstnew("kaka");
-//     t_list *node2 = ft_lstnew("nana");
-//     if (!node || !node1)
-//         return (1);
+// 	t_list *n1 = ft_lstnew("ana");
+// 	t_list *n2 = ft_lstnew("hoo");
+// 	t_list *n3 = ft_lstnew("boo");
+// 	t_list *n4 = ft_lstnew("kooo");
 
-//     head = node;
-//     node->next = node1;
-//     node1-> next = NULL;
-//     ft_lstadd_front(&head, node2);
-//     node2->next = node1;
-//     current = head;
-//     while (current != NULL)
-//     {
-//         printf("%s\n", (char *)current->content);
-//         current = current->next;
-
-//     }
-
+// 	head = n1;
+// 	n1->next = n2;
+// 	n2->next = n3;
+// 	n3->next = NULL;
+// 	ft_lstadd_front(&head, n4);
+// 	while (head != NULL)
+// 	{
+// 		printf("%s\n", head->content);
+// 		head = head->next;
+// 	}
 // }
