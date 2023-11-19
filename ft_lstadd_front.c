@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 09:24:51 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/18 17:30:57 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/19 16:23:33 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void    ft_lstadd_front(t_list **lst, t_list *new)
 // int main()
 // {
 // 	t_list *head;
-// 	head = NULL;
 
 // 	t_list *n1 = ft_lstnew("ana");
 // 	t_list *n2 = ft_lstnew("hoo");

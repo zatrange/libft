@@ -6,7 +6,7 @@
 #    By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 17:30:25 by zgtaib            #+#    #+#              #
-#    Updated: 2023/11/18 18:34:58 by zgtaib           ###   ########.fr        #
+#    Updated: 2023/11/19 20:05:19 by zgtaib           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ SRC = ft_isalnum.c \
 		ft_split.c \
 		ft_strmapi.c \
 		ft_striteri.c
-SRCB = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c
+SRCB = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 OBJ  = $(SRC:.c=.o)
 OBJB = $(SRCB:.c=.o)
 

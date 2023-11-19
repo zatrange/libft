@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 19:12:23 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/19 13:46:16 by zgtaib           ###   ########.fr       */
+/*   Created: 2023/11/19 13:53:37 by zgtaib            #+#    #+#             */
+/*   Updated: 2023/11/19 17:16:29 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
-{
-	int	x;
-	int	sign;
-	int	result;
+#include "libft.h"
 
-	x = 0;
-	sign = 1;
-	result = 0;
-	while (str[x] == 32 || (str[x] >= 9 && str[x] <= 13))
-		x++;
-	if (str[x] == 45)
-	{
-		sign *= -1;
-		x++;
+void	ft_lstclear(t_list **lst, void (*del)(void *))
+{
+	t_list	*curr;
+	t_list	*temp;
+
+	if (!lst || !del)
+		return ;
+	curr = *lst;
+	while (curr!= NULL)
+	{	
+		temp = curr->next;	
+		del(curr->content);
+		free(curr);
+		curr = temp;
 	}
-	else if (str[x] == 43)
-		x++;
-	while (str[x] >= '0' && str[x] <= '9')
-	{
-		result = result * 10 + (str[x] - '0');
-		x++;
-	}
-	return (result * sign);
+	*lst = NULL;
 }

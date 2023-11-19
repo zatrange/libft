@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 13:41:34 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/18 17:46:50 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/19 12:43:56 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,16 @@
 
 int ft_lstsize(t_list *lst)
 {
+	t_list *curr;
     int     count;
 
     if (!lst)
         return (0);
+	curr = lst;
     count = 0;
-    while (lst != NULL)
+    while (curr != NULL)
     {
-    	lst = lst->next;
+    	curr = curr->next;
         count++;
     }
     return (count);

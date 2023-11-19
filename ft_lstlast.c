@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 14:34:23 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/18 17:37:08 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/19 12:44:12 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 t_list  *ft_lstlast(t_list *lst)
 { 
 	t_list *curr;
-	
+
     if (!lst)
         return (NULL);
-    curr = lst;
+	curr = lst;
     while (curr->next != NULL)
     {
         curr = curr->next; 

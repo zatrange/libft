@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 19:12:23 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/19 13:46:16 by zgtaib           ###   ########.fr       */
+/*   Created: 2023/11/19 18:37:04 by zgtaib            #+#    #+#             */
+/*   Updated: 2023/11/19 20:03:30 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
-{
-	int	x;
-	int	sign;
-	int	result;
+#include "libft.h"
 
-	x = 0;
-	sign = 1;
-	result = 0;
-	while (str[x] == 32 || (str[x] >= 9 && str[x] <= 13))
-		x++;
-	if (str[x] == 45)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list *curr;
+	t_list *new;
+	t_list *head;
+
+	if(!lst || !f || !del)
+		return (0);
+	curr = lst;
+	head = NULL;
+	while (curr != NULL)
 	{
-		sign *= -1;
-		x++;
+		new = ft_lstnew(f(lst->content));
+		if (!new)
+		{
+			ft_lstclear(&head, del);
+			return (0);
+		}
+		ft_lstadd_back(&head, new);
+		curr = curr->next;
 	}
-	else if (str[x] == 43)
-		x++;
-	while (str[x] >= '0' && str[x] <= '9')
-	{
-		result = result * 10 + (str[x] - '0');
-		x++;
-	}
-	return (result * sign);
+	return (new);
 }

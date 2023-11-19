@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 19:12:23 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/19 13:46:16 by zgtaib           ###   ########.fr       */
+/*   Created: 2023/11/19 18:23:13 by zgtaib            #+#    #+#             */
+/*   Updated: 2023/11/19 18:35:29 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
-{
-	int	x;
-	int	sign;
-	int	result;
+#include "libft.h"
 
-	x = 0;
-	sign = 1;
-	result = 0;
-	while (str[x] == 32 || (str[x] >= 9 && str[x] <= 13))
-		x++;
-	if (str[x] == 45)
+void ft_lstiter(t_list *lst, void (*f)(void *))
+{
+	t_list *curr;
+
+	if(!lst || !f)
+		return ;
+	curr = lst;
+	while (curr!= NULL)
 	{
-		sign *= -1;
-		x++;
+		f(curr->content);
+		curr = curr->next;
 	}
-	else if (str[x] == 43)
-		x++;
-	while (str[x] >= '0' && str[x] <= '9')
-	{
-		result = result * 10 + (str[x] - '0');
-		x++;
-	}
-	return (result * sign);
 }

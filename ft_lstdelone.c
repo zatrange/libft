@@ -1,37 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/01 19:12:23 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/19 13:46:16 by zgtaib           ###   ########.fr       */
+/*   Created: 2023/11/19 13:16:41 by zgtaib            #+#    #+#             */
+/*   Updated: 2023/11/19 17:12:03 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
-{
-	int	x;
-	int	sign;
-	int	result;
+#include "libft.h"
 
-	x = 0;
-	sign = 1;
-	result = 0;
-	while (str[x] == 32 || (str[x] >= 9 && str[x] <= 13))
-		x++;
-	if (str[x] == 45)
-	{
-		sign *= -1;
-		x++;
-	}
-	else if (str[x] == 43)
-		x++;
-	while (str[x] >= '0' && str[x] <= '9')
-	{
-		result = result * 10 + (str[x] - '0');
-		x++;
-	}
-	return (result * sign);
+void ft_lstdelone(t_list *lst, void (*del)(void *))
+{
+	if(!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
 }
