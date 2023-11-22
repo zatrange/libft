@@ -6,12 +6,11 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 16:07:47 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/17 15:26:06 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/22 17:20:25 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static int	countingwords(char const *s, char c)
 {
@@ -20,6 +19,7 @@ static int	countingwords(char const *s, char c)
 
 	x = 0;
 	count = 0;
+	
 	while (s[x] != '\0')
 	{
 		while (s[x] != '\0' && s[x] == c)
@@ -59,12 +59,12 @@ static char	*fillword(int *x, char const *s, char c)
 	return (str);
 }
 
-static void freed(char **res)
+static void	freed(char **res)
 {
 	int	i;
 
 	i = 0;
-		if (res)
+	if (res)
 	{
 		while (res[i])
 		{
@@ -105,7 +105,7 @@ char	**ft_split(char const *s, char c)
 }
 // int main()
 // {
-//     const char *inputString = "\t\t\t\t\tteste\t\t\t\t\t\t";
+//     const char *inputString = NULL;
 //     char delimiter = '\t';
 
 //     char **result = ft_split(inputString, delimiter);
@@ -127,13 +127,15 @@ char	**ft_split(char const *s, char c)
 // }
 // int main()
 // {
-//     char str[] = "\0aa\0bbb";
+//     char *str = NULL;
 //     char c = '\0';
 //     char **res = ft_split(str,c);
+// 	if(res == NULL)
+// 		printf("null");
 //     int i = 0;
-//     while(res[i])
-//     {
-//         printf("%s\n", res[i]);
-//         i++;
-//     }
+//     // while(res[i])
+//     // {
+//     //     printf("%s\n", res[i]);
+//     //     i++;
+//     // }
 // }

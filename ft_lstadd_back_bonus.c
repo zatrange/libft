@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/17 09:24:51 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/19 16:23:33 by zgtaib           ###   ########.fr       */
+/*   Created: 2023/11/17 18:32:01 by zgtaib            #+#    #+#             */
+/*   Updated: 2023/11/22 12:46:02 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if(new == NULL)
+	t_list	*curr;
+
+	if (new == NULL)
 		return ;
 	if (*lst == NULL)
 		*lst = new;
-	else{
-    new->next = *lst;
-    *lst = new;
-	}    
+	else
+	{
+		curr = ft_lstlast(*lst);
+		curr->next = new;
+	}
 }
 // int main()
 // {
 // 	t_list *head;
+// 	head = NULL;
 
 // 	t_list *n1 = ft_lstnew("ana");
 // 	t_list *n2 = ft_lstnew("hoo");
@@ -36,7 +40,7 @@ void    ft_lstadd_front(t_list **lst, t_list *new)
 // 	n1->next = n2;
 // 	n2->next = n3;
 // 	n3->next = NULL;
-// 	ft_lstadd_front(&head, n4);
+// 	ft_lstadd_back(&head, n4);
 // 	while (head != NULL)
 // 	{
 // 		printf("%s\n", head->content);

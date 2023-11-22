@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 10:28:31 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/19 18:38:09 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/22 13:56:12 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include <unistd.h>
 # include <stdio.h>
-# include <stddef.h>
 # include <stdlib.h>
+# include <string.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -53,11 +53,11 @@ char	**ft_split(char const *s, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
-typedef	struct s_list
+typedef struct s_list
 {
-void			*content;
-struct s_list	*next;
-}				t_list;
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **lst, t_list *new);

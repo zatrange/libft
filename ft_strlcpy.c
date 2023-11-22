@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 18:11:39 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/09 11:12:46 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/22 17:35:49 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 
 	len = ft_strlen(src);
 	i = 0;
+	
 	if (n > 0)
 	{
 		while (i < n - 1 && src[i] != '\0')
