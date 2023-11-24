@@ -6,9 +6,11 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 19:12:23 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/22 14:22:11 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/24 18:26:29 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
@@ -35,4 +37,3 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
-

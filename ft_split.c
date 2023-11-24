@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 16:07:47 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/22 17:20:25 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/24 18:31:48 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ static int	countingwords(char const *s, char c)
 
 	x = 0;
 	count = 0;
-	
 	while (s[x] != '\0')
 	{
 		while (s[x] != '\0' && s[x] == c)
@@ -103,39 +102,3 @@ char	**ft_split(char const *s, char c)
 	str[countingwords(s, c)] = 0;
 	return (str);
 }
-// int main()
-// {
-//     const char *inputString = NULL;
-//     char delimiter = '\t';
-
-//     char **result = ft_split(inputString, delimiter);
-//     // Print the split words
-//     for (int i = 0; result[i] != NULL; i++) {
-//         printf("Word %d: %s\n", i + 1, result[i]);
-//     }
-// }
-// int main()
-// {
-//     const char *inputString = "hello";
-//     char delimiter = ' ';
-
-//     char **result = ft_split(inputString, delimiter);
-//     // Print the split words
-//     for (int i = 0; result[i] != NULL; i++) {
-//         printf("Word %d: %s\n", i + 1, result[i]);
-//     }
-// }
-// int main()
-// {
-//     char *str = NULL;
-//     char c = '\0';
-//     char **res = ft_split(str,c);
-// 	if(res == NULL)
-// 		printf("null");
-//     int i = 0;
-//     // while(res[i])
-//     // {
-//     //     printf("%s\n", res[i]);
-//     //     i++;
-//     // }
-// }

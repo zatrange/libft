@@ -6,11 +6,12 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:57:42 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/12 14:36:40 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/24 16:54:48 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <fcntl.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {

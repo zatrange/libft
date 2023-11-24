@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 18:30:05 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/22 17:23:04 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/24 18:31:20 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[x] = '\0';
 	return (str);
 }
-

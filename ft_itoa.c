@@ -6,12 +6,11 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:58:30 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/16 15:56:16 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/24 18:26:49 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static	int	digitcount(long c)
 {
