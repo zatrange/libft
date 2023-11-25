@@ -6,34 +6,60 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 19:12:23 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/24 18:26:29 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/25 20:33:08 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int ft_check(unsigned long long nbr, int si, int leni)
+{
+    if (leni >= 20 && si > 0)
+        return (-1);
+    if (leni >= 20 && si < 0)
+        return (0);
+    if (nbr > LONG_MAX && si > 0)
+        return (-1);
+    if (nbr > LONG_MAX && si < 0)
+        return (0);
+    return ((int)nbr * si);
+}
+
+static int spaces(const char *str)
+{
+	int	y;
+
+	y = 0;
+	while (str[y] == 32 || (str[y] >= 9 && str[y] <= 13))
+		y++;
+	return(y);
+}
+
 int	ft_atoi(const char *str)
 {
-	int	x;
-	int	sign;
-	int	result;
+	int					x;
+	int					y;
+	int					sign;
+	unsigned long long	result;
 
 	x = 0;
+	y = spaces(str);
 	sign = 1;
 	result = 0;
-	while (str[x] == 32 || (str[x] >= 9 && str[x] <= 13))
-		x++;
-	if (str[x] == 45)
+	if (str[y] == 45)
 	{
 		sign *= -1;
-		x++;
+		y++;
 	}
-	else if (str[x] == 43)
-		x++;
-	while (str[x] >= '0' && str[x] <= '9')
+	else if (str[y] == 43)
+		y++;
+	 while (str[y] == '0')
+	 	y++;
+	while (str[y] >= '0' && str[y] <= '9')
 	{
-		result = result * 10 + (str[x] - '0');
+		result = result * 10 + (str[y] - '0');
+		y++;
 		x++;
 	}
-	return (result * sign);
+	return (ft_check(result, sign, x));
 }

@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 18:37:04 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/24 18:27:47 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/25 15:43:40 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,39 +33,42 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (head);
 }
-
 // static void ft_upp(void *content)
 // {
-// 	char *str = content;
+// 	char *str = (char *)content;
 // 	int x = 0;
-// 	while(str[x] != '\0' )
+// 	while (str[x] != '\0')
 // 	{
-// 		if(str[x] >= 'a' && str[x] <= 'b')
-// 		{
+// 		if (str[x] >= 'a' && str[x] <= 'z')
 // 			str[x] -= 32;
-// 		}
 // 		x++;
 // 	}
 // }
 // static void ft_del(void *content)
 // {
-// 	free(content);
+// 	free (content);
 // }
 // int main()
 // {
-// 	t_list *head = NULL;
-// 	t_list *n1 = ft_lstnew(ft_strdup("aaaa"));
-// 	t_list *n2 = ft_lstnew(ft_strdup("bbbb"));
-// 	t_list *n3 = ft_lstnew(ft_strdup("hhhh"));
-
-// 	ft_lstadd_back(&head, n1);
+// 	t_list *head;
+// 	t_list *cuur;
+// 	t_list *n1 = ft_lstnew(ft_strdup("hey "));
+// 	t_list *n2 = ft_lstnew(ft_strdup("sup "));
+// 	t_list *n3 = ft_lstnew(ft_strdup("u know why god made ak47 ..."));
+// 	t_list *n4 = ft_lstnew(ft_strdup("to kill dinasors and "));
+// 	t_list *n5 = ft_lstnew(ft_strdup("homosexuals"));
+// 	head = n1;
 // 	ft_lstadd_back(&head, n2);
 // 	ft_lstadd_back(&head, n3);
+// 	ft_lstadd_back(&head, n4);
+// 	ft_lstadd_back(&head, n5);
 
-// 	ft_lstmap(head, ft_upp, ft_del);
+// 	void *ptr = &ft_upp;
+// 	ft_lstmap(head, ptr, ft_del);
 // 	while (head != NULL)
 // 	{
-// 		printf("%s \n", head->content);
+// 		printf ("%s\n", head->content);
 // 		head = head->next;
 // 	}
+
 // }
