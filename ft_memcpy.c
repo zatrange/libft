@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 13:25:00 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/23 16:19:53 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/26 16:21:15 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+// int main()
+// {
+//     char src[] = "abcd";
+//     char dst[] = "bbbbbb";
+//     printf("%s",ft_memcpy(dst,src,2));
+// 	// printf("%s",memcpy(dst,src,2));
+// }

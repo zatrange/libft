@@ -6,12 +6,11 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:15:33 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/24 13:45:34 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/26 13:52:01 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <fcntl.h>
 
 void	ft_putchar_fd(char c, int fd)
 {

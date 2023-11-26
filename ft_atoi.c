@@ -6,33 +6,39 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 19:12:23 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/25 20:33:08 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/26 14:42:06 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int ft_check(unsigned long long nbr, int si, int leni)
+static int	ft_check(unsigned long long result, int sign, int lenx)
 {
-    if (leni >= 20 && si > 0)
-        return (-1);
-    if (leni >= 20 && si < 0)
-        return (0);
-    if (nbr > LONG_MAX && si > 0)
-        return (-1);
-    if (nbr > LONG_MAX && si < 0)
-        return (0);
-    return ((int)nbr * si);
+	if (lenx >= 20 && sign > 0)
+		return (-1);
+	if (lenx >= 20 && sign < 0)
+		return (0);
+	if (result > LONG_MAX && sign > 0)
+		return (-1);
+	if (result > LONG_MAX && sign < 0)
+		return (0);
+	return ((int)result * sign);
 }
 
-static int spaces(const char *str)
+static int	spaces(const char *str)
 {
 	int	y;
 
 	y = 0;
 	while (str[y] == 32 || (str[y] >= 9 && str[y] <= 13))
 		y++;
-	return(y);
+	return (y);
+}
+
+static void	zeros(const char *str, int *y)
+{
+	while (str[(*y)] == '0')
+		(*y)++;
 }
 
 int	ft_atoi(const char *str)
@@ -53,8 +59,7 @@ int	ft_atoi(const char *str)
 	}
 	else if (str[y] == 43)
 		y++;
-	 while (str[y] == '0')
-	 	y++;
+	zeros(str, &y);
 	while (str[y] >= '0' && str[y] <= '9')
 	{
 		result = result * 10 + (str[y] - '0');
@@ -63,3 +68,8 @@ int	ft_atoi(const char *str)
 	}
 	return (ft_check(result, sign, x));
 }
+// int main()
+// {
+// 	printf("%d\n", ft_atoi("-000000000000000000000000000000000000000000000-132"));
+// 		printf("%d", atoi("-000000000000000000000000000000000000000000000-132"));
+// }
