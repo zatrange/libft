@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 13:58:22 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/26 17:35:54 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/28 14:12:43 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,4 @@ void	*ft_memset(void *b, int c, size_t n)
 		x++;
 	}
 	return (b);
-}
-int main()
-{
-	int str[] = {5, 66};
-	ft_memset(&str[0] + 1, 6, 1);
 }

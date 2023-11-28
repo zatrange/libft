@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/19 18:23:13 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/26 16:15:53 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/28 14:45:12 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,30 +25,3 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		curr = curr->next;
 	}
 }
-
-// void	ft_tuppercase(void *content)
-// {
-// 	int	x = 0;
-// 	char	*str = (char *)content;
-// 	while (str[x] >= 'a' && str[x] <= 'z')
-// 	{
-// 		str[x] = str[x] - 32;
-// 		x++;
-// 	}
-// }
-// int main()
-// {
-// 	t_list *head;
-//     t_list *node1 = ft_lstnew("hhhhhh");
-//     t_list *node2 = ft_lstnew("aaaaaa");
-//     t_list *node3 = ft_lstnew("ffffff");
-// 	head = node1;
-//    ft_lstadd_back(&head, node2);
-//    ft_lstadd_back(&head, node3);
-// 	ft_lstiter(head, ft_tuppercase); 
-// 	while (head)
-// 	{
-// 		printf("%s", (char *)head->content);
-// 		head = head->next;
-// 	}  
-// }

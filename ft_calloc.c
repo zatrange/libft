@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 11:07:04 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/26 16:15:21 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/28 15:34:11 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,13 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t			len;
 
 	i = 0;
+	if ((int)count < 0 && (int)size < 0)
+		return (0);
+	if (count == 0 && size == 0)
+	{
+		count = 1;
+		size = 1;
+	}
 	len = count * size;
 	temp = (unsigned char *)malloc(len);
 	if (!temp)

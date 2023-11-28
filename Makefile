@@ -6,12 +6,12 @@
 #    By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/05 17:30:25 by zgtaib            #+#    #+#              #
-#    Updated: 2023/11/24 18:04:37 by zgtaib           ###   ########.fr        #
+#    Updated: 2023/11/27 14:57:14 by zgtaib           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-CC = gcc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 SRC = ft_isalnum.c \
 		ft_isdigit.c \

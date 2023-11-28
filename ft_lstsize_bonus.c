@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 13:41:34 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/21 18:13:05 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/28 14:45:37 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,3 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (count);
 }
-// int main()
-// {
-//     t_list *curr;
-//     t_list *node = ft_lstnew("damn ");
-//     t_list *node1 = ft_lstnew("son ");
-//     t_list *node2 = ft_lstnew("u ");
-//     t_list *node3 = ft_lstnew("suck");
-//     node->next = node1;
-//     node1->next = node2;
-//     node2->next = node3;
-//     curr = node;
-//     printf("%d\n", ft_lstsize(curr));
-//     while (curr != NULL)
-//     {
-//         printf("%s\n", (char *)curr->content);
-//         curr = curr->next;
-//     }
-// }

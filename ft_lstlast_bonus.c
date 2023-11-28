@@ -6,7 +6,7 @@
 /*   By: zgtaib <zgtaib@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 14:34:23 by zgtaib            #+#    #+#             */
-/*   Updated: 2023/11/22 12:46:18 by zgtaib           ###   ########.fr       */
+/*   Updated: 2023/11/28 14:45:19 by zgtaib           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,3 @@ t_list	*ft_lstlast(t_list *lst)
 	}
 	return (curr);
 }
-
-// int main ()
-// {
-//     t_list *curr;
-//     t_list *node = ft_lstnew("na ");
-//     t_list *node1 = ft_lstnew("nga ");
-//     t_list *node2 = ft_lstnew("naj ");
-//     t_list *node3 = ft_lstnew("ni");
-//     node->next = node1;
-//     node1->next = node2;
-//     node2->next = node3;
-//     curr = node;
-//     t_list *last = ft_lstlast(curr);
-//         printf("%s\n", (char *)last->content);
-// }
